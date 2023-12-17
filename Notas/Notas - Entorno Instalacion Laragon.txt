@@ -1,0 +1,111 @@
+---- Notas ----
+
+---- Clase00-Laragon ----
+
+- El video de la clase 00 enseña como instar Visual C - Runtimes de TechPowerUp
+
+- El video de la clase 00 enseña como instalar Laragon y configurar diferentes versiones de.
+	- Apache
+	- PHP
+	
+- El video de la clase 00 no enseña como instalar otras versiones de MySQL/MariaDB en Laragon. Para esto podemos ir a la ruta en Laragon: MariaDB -> Versión -> How to add another MySQL version
+	- https://forum.laragon.org/topic/164/tutorial-how-to-add-another-mysql-version
+	- Laragon vino con MySQL por defecto ----> mysql-8.0.30-winx64
+	- Laragon no contaba con MariaDB por defecto, asi que se instalo ----> mariadb-10.6.10-winx64 ---- Ver la imagen "Que version de MariaDB instalar.PNG"
+	- Notas:
+		- Para las base de datos de los proyectos usamos MariaDB.
+		- MariaDB se compromete a ser completamente de código abierto y está disponible de forma gratuita para su uso.
+		- MariaDB ha introducido algunas características y mejoras que no están presentes en las versiones más antiguas de MySQL. Esto incluye mejoras de rendimiento, nuevas capacidades de almacenamiento y optimizaciones de consultas.
+
+- El video de la clase 00 no enseña como instalar phpMyAdmin en Laragon. Para esto podemos buscar en Google: "Como instalar phpMyAdmin en Laragon"
+	- https://diarioprogramador.com/agregar-phpmyadmin-a-laragon/
+
+- Notas adicionales:
+	- Las versiones de PHP se descargaron de    ----> https://www.php.net/          ---- https://www.php.net/downloads/         ---- https://windows.php.net/downloads/releases/archives/
+	- Las versiones de Apache se descargaron de ----> https://www.apachelounge.com/ ---- https://www.apachelounge.com/download/ ---- https://www.apachelounge.com/download/additional/
+	- Al descargar Apache buscar los mensajes:
+		VS17
+		- Mensaje  ----> VS17 is backward compatible, That means, a VS16/15/14 module can be used inside the VS17 binary.
+		- Es decir ----> Puedo usar VS17 como si estuviera usando VS16/15/14
+		VS16
+		- Mensaje  ----> VS16 is backward compatible,. You can use a VC15/14 module inside a VS16 binary, for example PHP VC15/14 as module,
+		- Es decir ----> Puedo usar VS16 como si estuviera usando VC15/14
+	- Ubicación de los Binarios de Laragon ----> D:\PORTABLES\laragon\bin
+	- Ubicación de las Apps de Laragon     ----> D:\PORTABLES\laragon\etc\apps
+	
+---- Clase01-ConceptosPreliminares ----
+	
+- El video de la clase 01 enseña que Extensiones de VSCode instalar para PHP y que configuraciones en settings.json debemos tener para PHP
+	
+- El video de la clase 01 enseña como instalar PostgreSQL en Laragon
+	
+- Luego de la instalación debemos instalar pgAdmin de forma independiente como Navicat. Para eso lo descargamos de: https://www.pgadmin.org/
+	- En la instalacion debemos asegurarnos de indicar la carpeta de destino con el nombre de la version exacta, de este modo si instalamos "pgAdmin 4 v6.21" tendriamos que instalarlo en la ruta: "C:\Program Files\pgAdmin 4\v6.21". Esto para mantener el orden.
+	- Usar de "master password" en pgAdmin: "conejitalinda777{{Angular}}"
+	- Usar de configuración en "Rutas ejecutables" en pgAdmin:
+		- PostgreSQL 12 ----> D:\PORTABLES\laragon\bin\postgresql\postgresql-12.12-1\bin
+		- PostgreSQL 15 ----> D:\PORTABLES\laragon\bin\postgresql\postgresql-15.0-1\bin
+
+---- Clase02-Funciones-Procedimientos-Global-Xdebug ----
+
+- El video de la clase 02 enseña como configurar Xdebug
+
+- Tambien podemos ver el siguiente video
+https://www.youtube.com/watch?v=r4crYOCdm20&ab_channel=render2web
+
+- Existe el Xdebug Wizzard
+https://xdebug.org/wizard
+
+- Config Percy php.ini para Xdebug
+;Xdebug SISTEMASUNI
+zend_extension = D:\PORTABLES\laragon\bin\php\php-7.4.32-Win32-vc15-x64\ext\php_xdebug-3.1.5-7.4-vc15-x86_64.dll
+;para funcionamiento con VSC
+xdebug.mode = debug,develop,trace
+xdebug.client_host = localhost
+xdebug.client_port = 9003
+xdebug.start_with_request = yes
+
+---- Clase03-htaccess-Mail ----
+
+- Web del profesor
+https://cursos.3soft.pe/php1/
+
+- Ejemplos de archivos en la web del profesor
+https://cursos.3soft.pe/php1/c05-ArchivosTexto/
+
+- En el video de la clase 03 y la diapositiva muestran como configurar "Mail Sender" de Laragon
+
+---- Clase04-MySQL ----
+
+- Para crear una nueva Base de Datos en MySQL/MariaDB debemos usar:
+	- Conjunto de carácteres: utf8mb4
+	- Collation:              utf8mb4_general_ci
+
+- Para crear una nueva tabla en MySQL/MariaDB debemos usar:
+	- Conjunto de carácteres: utf8mb4
+	- Collation:              utf8mb4_general_ci
+	- Motor:                  InnoDB (Es el motor de BD mas actualizado)
+	
+- En PHP debemos usar "mysqli_query($cnx, 'set names utf8');" en caso exista una Base de Datos o tablas con:
+	- Conjunto de carácteres: latin1
+	- Collation:              latin1_swedish_ci
+	
+---- Clase08-TelegramBot ----
+
+- El video de la clase 08 enseña como instalar SQLServer en Laragon
+
+---- Instalacion Node ----
+
+- Ningun video enseña como instalar Node en Laragon. Para esto podemos ir a la ruta en Laragon: Node.js -> Versión -> How to add another Node.js version
+	- https://forum.laragon.org/topic/1005/tutorial-how-to-add-another-node-js-version-to-laragon-node-v12-13
+
+---- Instalacion MongoDB ----
+
+- Ningun video enseña como instalar MongoDB en Laragon. Para esto podemos buscar en Google: "Como instalar MongoDB en Laragon"
+	- https://forum.laragon.org/topic/815/mongodb-addon-for-laragon 
+
+- El enlace anterior ayuda a entender que se puede instalar diferentes versiones de MongoDB en Laragon y ademas habla de la dll de PHP, buscar en el enlace anterior la frase "Install MongoDB extension"
+	- https://forum.laragon.org/topic/172/tutorial-how-to-install-mongodb-extension
+
+- El enlace de descarga de MongoDB que facilita el primer enlace no funciona. Para esto ir a la siguiente ruta (Elegir version y descargarlo como zip):
+	- https://www.mongodb.com/try/download/community
